@@ -1,0 +1,7 @@
+{
+  "name": "DATECH Bar",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
