@@ -25,3 +25,17 @@
 #container a {
   text-decoration: none;
 }
+
+.flex{
+  width: 100%;
+  img{
+    width: 30px;
+  }
+  display: flex;
+  justify-content: center;
+}
+
+.font{
+  font-size: 25px;
+  color: rgb(203, 193, 179);
+}
