@@ -1,18 +1,35 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      <h1>Cardapio</h1>
+    <ion-title class="header">
+      <h1>DaTech-Bar</h1>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div class="container">
-    <h1>Cardapio</h1>
   </div>
+  <div>
+    <ion-title>Não sabe o que pedir?</ion-title>
+    <ion-input type="text" placeholder="Digite um ingrediente e se surpreenda" [(ngModel)]="ingrediente"></ion-input>
+    <ion-button (click)="showIngredient()" expand="block" fill="clear" shape="round">
+      Mostrar bebidas
+    </ion-button>
+  </div>
+
+  <div *ngIf="bebidas.length > 0">
+    <h1>Lista de bebidas que possuem {{ingrediente}} em sua formação</h1>
+    <ion-card *ngFor="let bebida of bebidas">
+    <img src={{bebida.strDrinkThumb}} alt="">
+    <ion-card-header>
+      <ion-card-title>{{bebida.strDrink}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  </div>
+  
 </ion-content>
 
-<ion-tab-bar slot="bottom">
-  <ion-tab-button class="font" [routerLink]="['/home']">Home</ion-tab-button>
-  <ion-tab-button class="font" [routerLink]="['/cardapio']">Menu</ion-tab-button>
+<ion-tab-bar slot="bottom" class="tabBar">
+  <ion-tab-button class="btnTab" [routerLink]="['/home']">Home</ion-tab-button>
+  <ion-tab-button class="btnTab" [routerLink]="['/cardapio']">Menu</ion-tab-button>
 </ion-tab-bar>

@@ -1,6 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
+export interface Drink {
+  strDrink: string;
+  strDrinkThumb: string;
+  idDrink: string;
+}
+interface DrinkResponse {
+  drinks: Drink[] | null;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +23,8 @@ export class CardapioService {
     return this.http.get(`${this.apiBase}/filter.php?c=${categoria}`);
   }
 
-  getBebidasPorIngrediente(ingrediente: string) {
-    return this.http.get(`${this.apiBase}/filter.php?i=${ingrediente}`);
+  getBebidasPorIngrediente(ingrediente: string) : Observable<DrinkResponse> {
+    return this.http.get<DrinkResponse>(`${this.apiBase}/filter.php?i=${ingrediente}`);
   }
 
   getBebidasPorCopo(tipoCopo: string) {
