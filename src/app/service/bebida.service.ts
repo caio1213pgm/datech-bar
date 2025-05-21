@@ -8,7 +8,6 @@ export class BebidaService {
   constructor(private http: HttpClient) {}
 
   getBebidas() {
-    
-    return this.http.get('https://www.thecocktaildb.com/api/json/v1/1');
+      return this.http.get('https://www.thecocktaildb.com/api/json/v1/1');
   }
 }
