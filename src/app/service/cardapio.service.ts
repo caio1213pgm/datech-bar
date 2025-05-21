@@ -7,6 +7,7 @@ export interface Drink {
   strDrinkThumb: string;
   idDrink: string;
 }
+
 interface DrinkResponse {
   drinks: Drink[] | null;
 }
@@ -19,19 +20,23 @@ export class CardapioService {
 
   constructor(private http: HttpClient) {}
 
-  getBebidasPorCategoria(categoria: string) {
-    return this.http.get(`${this.apiBase}/filter.php?c=${categoria}`);
+  getBebidasPorCategoria(categoria: string): Observable<DrinkResponse> {
+    return this.http.get<DrinkResponse>(`${this.apiBase}/filter.php?c=${categoria}`);
   }
 
-  getBebidasPorIngrediente(ingrediente: string) : Observable<DrinkResponse> {
+  getBebidasPorIngrediente(ingrediente: string): Observable<DrinkResponse> {
     return this.http.get<DrinkResponse>(`${this.apiBase}/filter.php?i=${ingrediente}`);
   }
 
-  getBebidasPorCopo(tipoCopo: string) {
-    return this.http.get(`${this.apiBase}/filter.php?g=${tipoCopo}`);
+  getBebidasPorCopo(tipoCopo: string): Observable<DrinkResponse> {
+    return this.http.get<DrinkResponse>(`${this.apiBase}/filter.php?g=${tipoCopo}`);
+
+
+  getBebidasPorAlcool(alcoolico: string): Observable<DrinkResponse> {
+    return this.http.get<DrinkResponse>(`${this.apiBase}/filter.php?a=${alcoolico}`);
   }
 
-  getBebidasPorAlcool(alcoolico: string) {
-    return this.http.get(`${this.apiBase}/filter.php?a=${alcoolico}`);
+  getBebidaPorNome(nome: string): Observable<DrinkResponse> {
+    return this.http.get<DrinkResponse>(`${this.apiBase}/search.php?s=${nome}`);
   }
 }
