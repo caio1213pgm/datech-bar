@@ -25,4 +25,10 @@ export class CardapioService {
   getBebidasPorAlcool(alcoolico: string) {
     return this.http.get(`${this.apiBase}/filter.php?a=${alcoolico}`);
   }
+
+  getBebidaPorNome(nome: string) {
+  return this.http.get(`${this.apiBase}/search.php?s=${nome}`);
+}
+
+
 }
