@@ -1,11 +1,43 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>cardapio</ion-title>
+    <ion-title class="header">
+      <h1>DaTech-Bar</h1>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="container">
-    <h1>Cardapio</h1>
+
+  <div class="navMenu">
+    <div class="topic">
+      <h1>Categorias</h1>
+      <ion-icon name="beer" size="large"></ion-icon>
+    </div>
+
+    <div class="topic" [routerLink]="['/ingrediente']">
+      <h1>Procurar pelo ingrediente</h1>
+      <ion-icon name="beer" size="large"></ion-icon>
+    </div>
+
+    <div class="topic">
+      <h1>Procurar pelo álcool</h1>
+      <ion-icon name="beer" size="large"></ion-icon>
+    </div>
+
+    <div class="topic">
+      <h1>Procurar pelo copo</h1>
+      <ion-icon name="beer" size="large"></ion-icon>
+    </div>
+
+    <div class="topic">
+      <h1>Procurar bebida</h1>
+      <ion-icon name="beer" size="large"></ion-icon>
+    </div>
   </div>
+
 </ion-content>
+
+<ion-tab-bar slot="bottom" class="tabBar">
+  <ion-tab-button class="btnTab" [routerLink]="['/home']">Home</ion-tab-button>
+  <ion-tab-button class="btnTab" [routerLink]="['/cardapio']">Menu</ion-tab-button>
+</ion-tab-bar>

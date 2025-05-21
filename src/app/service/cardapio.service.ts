@@ -30,7 +30,7 @@ export class CardapioService {
 
   getBebidasPorCopo(tipoCopo: string): Observable<DrinkResponse> {
     return this.http.get<DrinkResponse>(`${this.apiBase}/filter.php?g=${tipoCopo}`);
-  }
+
 
   getBebidasPorAlcool(alcoolico: string): Observable<DrinkResponse> {
     return this.http.get<DrinkResponse>(`${this.apiBase}/filter.php?a=${alcoolico}`);

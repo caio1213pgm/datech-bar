@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'bebida',
     loadChildren: () => import('./bebida/bebida.module').then( m => m.BebidaPageModule)
   },
+  {
+    path: 'ingrediente',
+    loadChildren: () => import('./pegar-pelo-ingrediente/pegar-pelo-ingrediente.module').then( m => m.PegarPeloIngredientePageModule)
+  },
 ];
 
 @NgModule({

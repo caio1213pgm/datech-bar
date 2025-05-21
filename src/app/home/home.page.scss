@@ -25,3 +25,30 @@
 #container a {
   text-decoration: none;
 }
+
+.flex{
+  width: 100%;
+  img{
+    width: 30px;
+  }
+  display: flex;
+  justify-content: center;
+}
+.header {
+  text-align: center;
+  padding: 10px;
+  h1 {
+    font-weight: 700;
+  }
+}
+
+.btnTab {
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  border: 1.5px solid;
+}
+.tabBar{
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}

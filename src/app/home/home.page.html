@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
+    <ion-title class="header">
+      <h1>DaTech-Bar</h1>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,3 +11,8 @@
     <h1>Home</h1>
   </div>
 </ion-content>
+
+<ion-tab-bar slot="bottom" class="tabBar">
+  <ion-tab-button class="btnTab" [routerLink]="['/home']">Home</ion-tab-button>
+  <ion-tab-button class="btnTab" [routerLink]="['/cardapio']">Menu</ion-tab-button>
+</ion-tab-bar>
