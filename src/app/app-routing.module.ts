@@ -16,7 +16,7 @@ const routes: Routes = [
     loadChildren: () => import('./cardapio/cardapio.module').then( m => m.CardapioPageModule)
   },
   {
-    path: 'bebida',
+    path: 'bebida/:id',
     loadChildren: () => import('./bebida/bebida.module').then( m => m.BebidaPageModule)
   },
   {
