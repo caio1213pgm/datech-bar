@@ -23,6 +23,16 @@ const routes: Routes = [
     path: 'ingrediente',
     loadChildren: () => import('./pegar-pelo-ingrediente/pegar-pelo-ingrediente.module').then( m => m.PegarPeloIngredientePageModule)
   },
+   {
+  path: 'pegar-bebida-nome',
+  loadComponent: () => import('./pegar-bebida-nome/pegar-bebida-nome.page').then(m => m.PegarBebidaNomePage)
+},
+  {
+  path: 'pegar-bebida-copo',
+  loadComponent: () => import('./pegar-bebida-copo/pegar-bebida-copo.page').then(m => m.PegarBebidaCopoPage)
+}
+
+
 ];
 
 @NgModule({
