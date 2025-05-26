@@ -6,9 +6,35 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <div id="container">
-    <h1>Home</h1>
+<ion-content class="info-hub">
+  <div class="main-title">
+    <h1>DATECH BAR</h1>
+<p>
+  Já ficou sem ideia do que beber? Ou esqueceu o nome daquela bebida incrível que provou uma vez?<br>
+  Aqui você encontra a bebida certa para o momento certo.<br>
+  Busque drinks pelo nome, teor alcoólico, tipo de copo, ingredientes e muito mais.<br>
+  Seja para explorar novas receitas ou relembrar aquele clássico que marcou a noite, o nosso site te ajuda a encontrar a combinação perfeita.<br><br>
+  Descubra novos sabores. Redescubra velhos favoritos. Aproveite cada gole.
+</p>
+  </div>
+  <div class="info-blocks">
+    <div class="block" (click)="goToMenu()">
+      <div class="block-icon">🍺</div>
+      <h2>Busca Específica</h2>
+      <p>Encontre exatamente o que procura: ingrediente, álcool ou copo.</p>
+    </div>
+
+    <div class="block" (click)="goToMenu()">
+      <div class="block-icon">🍷</div>
+      <h2>Detalhes Completos</h2>
+      <p>Saiba sobre os ingredientes da bebida que deseja.</p>
+    </div>
+
+    <div class="block" (click)="goToMenu()">
+      <div class="block-icon">🥂</div>
+      <h2>Descubra novos gostos</h2>
+      <p>Encontre sabores que combinam com o seu momento.</p>
+    </div>
   </div>
 </ion-content>
 
