@@ -52,3 +52,59 @@
   display: flex;
   gap: 10px;
 }
+.info-hub {
+  padding: 20px;
+  text-align: center;
+
+  .main-title {
+    margin-bottom: 30px;
+    h1 {
+      font-size: 2.2rem;
+      color: #ffffff;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    p {
+      color: #ffffff;
+      font-size: 1.1rem;
+      margin: 0;
+    }
+  }
+
+  .info-blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .block {
+    background: rgb(42, 42, 42);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+    &:hover{
+    background-color: rgb(2, 2, 2);
+  }
+
+    .block-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      color:rgb(255, 255, 255);
+      font-size: 1.4rem;
+      margin: 10px 0;
+    }
+
+    p {
+      color: #fcfafa;
+      font-size: 1rem;
+      line-height: 1.4;
+      margin: 0;
+    }
+  }
+}
