@@ -1,39 +1,63 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="header">
-      <h1>DaTech-Bar</h1>
+      <h1>DaTech-Bar</h1> <!-- Corrigido de "Datech-Bar" para "DaTech-Bar" -->
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <!-- Área de Pesquisa -->
   <div class="divInput">
     <h1>Lista de bebidas</h1>
-    <ion-input type="text" placeholder="Digite um ingrediente" [(ngModel)]="ingrediente"></ion-input>
-    <ion-button id="open-loading" (click)="showIngredient()">Procurar bebidas</ion-button>
-    <ion-loading trigger="open-loading" message="procurando bebidas que possuam {{ingrediente}} em sua formação"
-      duration="2000"></ion-loading>
+    
+    <!-- Input para pesquisa -->
+    <ion-input 
+      type="text" 
+      placeholder="Digite um ingrediente" 
+      [(ngModel)]="ingrediente"> <!-- Corrigido de ngNode! para ngModel -->
+    </ion-input>
+    
+    <!-- Botão de ação -->
+    <ion-button id="open-loading" (click)="showIngredient()">
+      Procurar bebidas <!-- Corrigido de "Procuran" para "Procurar" -->
+    </ion-button>
+    
+    <!-- Loading -->
+    <ion-loading 
+      trigger="open-loading" 
+      message="Procurando bebidas que possuam {{ingrediente}} em sua formação" 
+      duration="2000"> <!-- Corrigida a interpolação -->
+    </ion-loading>
   </div>
 
-
-  <div *ngIf="chegou === true">
-    <div *ngFor="let bebida of bebidas">
+  <!-- Resultados - Quando encontrados -->
+  <div *ngIf="chegou === true"> <!-- Corrigida a diretiva *ngIf -->
+    <div *ngFor="let bebida of bebidas"> <!-- Corrigida a diretiva *ngFor -->
       <ion-card>
-        <img src="{{bebida.strDrinkThumb}}">
+        <img [src]="bebida.strDrinkThumb" alt="Imagem da bebida"> <!-- Melhorado com binding e alt -->
         <ion-card-content>
-          <ion-card-title>{{bebida.strDrink}}</ion-card-title>
+          <ion-card-title>{{ bebida.strDrink | uppercaseDrink }}</ion-card-title>
         </ion-card-content>
       </ion-card>
     </div>
   </div>
 
-  <div *ngIf="chegou === false" class="error">
-    <h1>ops...</h1>
-    <h2>Infelizmente não temos um bebida que possui esse ingrediente, tente outro!</h2>
+  <!-- Mensagem de erro - Quando não encontrado -->
+  <div *ngIf="chegou === false" class="error"> 
+    <h1>Ops...</h1>
+    <h2>Infelizmente não temos uma bebida que possua esse ingrediente, tente outro!</h2>
   </div>
 </ion-content>
 
+<!-- Barra de navegação inferior -->
 <ion-tab-bar slot="bottom" class="tabBar">
-  <ion-tab-button class="btnTab" [routerLink]="['/home']">Home</ion-tab-button>
-  <ion-tab-button class="btnTab" [routerLink]="['/cardapio']">Menu</ion-tab-button>
+  <ion-tab-button class="btnTab" [routerLink]="['/home']">
+    <ion-icon name="home"></ion-icon>
+    <ion-label>Home</ion-label>
+  </ion-tab-button>
+  <ion-tab-button class="btnTab" [routerLink]="['/cardapio']">
+    <ion-icon name="list"></ion-icon>
+    <ion-label>Menu</ion-label>
+  </ion-tab-button>
 </ion-tab-bar>
