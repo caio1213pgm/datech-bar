@@ -8,7 +8,13 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-pegar-bebida-copo',
   standalone: true,
-  imports: [IonicModule, CommonModule, HttpClientModule, FormsModule, RouterModule],
+  imports: [
+    IonicModule,
+    CommonModule,
+    HttpClientModule,
+    FormsModule,
+    RouterModule,
+  ],
   templateUrl: './pegar-bebida-copo.page.html',
   styleUrls: ['./pegar-bebida-copo.page.scss'],
 })
@@ -19,19 +25,19 @@ export class PegarBebidaCopoPage {
 
   constructor(private http: HttpClient) {}
 
- showByGlass() {
-  this.http.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=${this.copo}`)
-    .subscribe((res: any) => {
-      if (res.drinks) {
-        this.bebidas = res.drinks;
-        this.chegou = true;
-      } else {
-        this.bebidas = [];
-        this.chegou = false;
-      }
-    }, (error: any) => {
-      this.bebidas = [];
-      this.chegou = false;
-    });
-}
+  showByGlass() {
+    this.http
+      .get(
+        `https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=${this.copo}`
+      )
+      .subscribe((res: any) => {
+        if (res.drinks !== 'no data found') {
+          this.bebidas = res.drinks;
+          this.chegou = true;
+        } else {
+          this.bebidas = [];
+          this.chegou = false;
+        }
+      });
+  }
 }
