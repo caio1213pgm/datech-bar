@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="header">
+      <h1>DaTech-Bar</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="divInput">
+    <h1>Lista de bebidas que posseum/não possuem Alcool</h1>
+      <ion-select value="" multiple="false" placeholder="Escolha uma opção:" [(ngModel)]="teorAlcool">
+        <ion-select-option value="Alcoholic">Alcoolico</ion-select-option>
+        <ion-select-option value="Non_Alcoholic">Não Alcoolico</ion-select-option>
+      </ion-select>
+    <ion-button id="open-loading" (click)="showAlcohol()">Procurar bebidas</ion-button>
+    <ion-loading trigger="open-loading" message="procurando bebidas..."
+      duration="2000"></ion-loading>
+  </div>
+
+
+  <div *ngIf="chegou === true">
+    <div *ngFor="let bebida of bebidas">
+      <ion-card [routerLink]="['/bebida', bebida.idDrink]">
+        <img src="{{bebida.strDrinkThumb}}">
+        <ion-card-content>
+          <ion-card-title>{{bebida.strDrink}}</ion-card-title>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+  <div *ngIf="chegou === false" class="error">
+    <h1>ops...</h1>
+    <h2>Infelizmente não temos um bebida que possui esse ingrediente, tente outro!</h2>
+  </div>
+
+</ion-content>
+
+<ion-tab-bar slot="bottom" class="tabBar">
+  <ion-tab-button class="btnTab" [routerLink]="['/home']">Home</ion-tab-button>
+  <ion-tab-button class="btnTab" [routerLink]="['/cardapio']">Menu</ion-tab-button>
+</ion-tab-bar>

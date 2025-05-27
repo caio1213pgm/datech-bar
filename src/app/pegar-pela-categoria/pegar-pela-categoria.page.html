@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="header">
+      <h1>DaTech-Bar</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="divInput">
+    <h1>Filtrar por categoria</h1>
+    <ion-select [(ngModel)]="categoria" placeholder="Selecione uma categoria">
+      <ion-select-option value="Ordinary_Drink">Drink comum</ion-select-option>
+      <ion-select-option value="Cocktail">Cocktail</ion-select-option>
+      <ion-select-option value="Milk / Float / Shake">Milkshake</ion-select-option>
+      <ion-select-option value="Cocoa">Cacau</ion-select-option>
+      <ion-select-option value="Shot">Shot</ion-select-option>
+      <ion-select-option value="Coffee / Tea">Café/Chá</ion-select-option>
+      <ion-select-option value="Soft_Drink">Refrigerante</ion-select-option>
+    </ion-select>
+    <ion-button id="open-loading" (click)="showCategory()">Procurar bebidas</ion-button>
+    <ion-loading trigger="open-loading" message="procurando bebidas da categoria {{categoria}}" duration="2000"></ion-loading>
+  </div>
+
+
+  <div *ngIf="chegou === true">
+    <div *ngFor="let bebida of bebidas">
+      <ion-card [routerLink]="['/bebida', bebida.idDrink]">
+        <img src="{{bebida.strDrinkThumb}}">
+        <ion-card-content>
+          <ion-card-title>{{bebida.strDrink}}</ion-card-title>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+  <div *ngIf="chegou === false" class="error">
+    <h1>ops...</h1>
+    <h2>Infelizmente não temos um bebida que possui esse ingrediente, tente outro!</h2>
+  </div>
+
+</ion-content>
+
+<ion-tab-bar slot="bottom" class="tabBar">
+  <ion-tab-button class="btnTab" [routerLink]="['/home']">Home</ion-tab-button>
+  <ion-tab-button class="btnTab" [routerLink]="['/cardapio']">Menu</ion-tab-button>
+</ion-tab-bar>
