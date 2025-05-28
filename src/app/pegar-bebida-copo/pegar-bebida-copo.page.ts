@@ -1,29 +1,22 @@
-import { Component } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-pegar-bebida-copo',
-  standalone: true,
-  imports: [
-    IonicModule,
-    CommonModule,
-    HttpClientModule,
-    FormsModule,
-    RouterModule,
-  ],
   templateUrl: './pegar-bebida-copo.page.html',
-  styleUrls: ['./pegar-bebida-copo.page.scss'],
+  styleUrls: ['./pegar-bebida-copo.page.scss', '../app.component.scss'],
+  standalone: false,
 })
-export class PegarBebidaCopoPage {
+export class PegarBebidaCopoPage implements OnInit {
+
+  constructor(private http: HttpClient) { }
+
   copo: string = '';
   bebidas: any[] = [];
   chegou: boolean | null = null;
 
-  constructor(private http: HttpClient) {}
+  ngOnInit() {
+  }
 
   showByGlass() {
     this.http

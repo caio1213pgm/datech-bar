@@ -26,15 +26,17 @@
   text-decoration: none;
 }
 
-.flex{
+.flex {
   width: 100%;
-  img{
+  img {
     width: 30px;
   }
   display: flex;
   justify-content: center;
 }
 .header {
+  color: #f4e6c9;
+  background-color: #561113;
   text-align: center;
   padding: 10px;
   h1 {
@@ -44,11 +46,13 @@
 
 .btnTab {
   font-size: 25px;
-  color: rgb(255, 255, 255);
+  color: #561113;
+  background-color: #f4e6c9;
   border: 1.5px solid;
 }
-.tabBar{
+.tabBar {
   padding: 10px;
+  background-color: #561113;
   display: flex;
   gap: 10px;
 }
@@ -57,6 +61,7 @@
   text-align: center;
 
   .main-title {
+
     margin-bottom: 30px;
     h1 {
       font-size: 2.2rem;
@@ -67,6 +72,7 @@
     p {
       color: #ffffff;
       font-size: 1.1rem;
+      padding: 0 10px;
       margin: 0;
     }
   }
@@ -77,17 +83,18 @@
     gap: 20px;
     max-width: 900px;
     margin: 0 auto;
+    padding: 10px;
   }
 
   .block {
-    background: rgb(42, 42, 42);
+    background-color: #561113;
     border-radius: 12px;
     padding: 25px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     transition: all 0.2s ease;
-    &:hover{
-    background-color: rgb(2, 2, 2);
-  }
+    &:hover {
+      background-color: rgb(2, 2, 2);
+    }
 
     .block-icon {
       font-size: 2.5rem;
@@ -95,7 +102,7 @@
     }
 
     h2 {
-      color:rgb(255, 255, 255);
+      color: rgb(255, 255, 255);
       font-size: 1.4rem;
       margin: 10px 0;
     }

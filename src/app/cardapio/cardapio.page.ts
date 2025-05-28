@@ -4,7 +4,7 @@ import { CardapioService } from '../service/cardapio.service';
 @Component({
   selector: 'app-cardapio',
   templateUrl: './cardapio.page.html',
-  styleUrls: ['./cardapio.page.scss'],
+  styleUrls: ['./cardapio.page.scss', '../app.component.scss'],
   standalone: false,
 })
 export class CardapioPage implements OnInit {

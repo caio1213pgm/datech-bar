@@ -1,30 +1,51 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>bebida</ion-title>
+  <ion-toolbar class="header" color="#561113">
+    <ion-buttons slot="start">
+      <ion-back-button icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <h1>DaTech-Bar</h1>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="container">
+
+  <div>
     <ion-card *ngIf="bebida">
-      <img src={{bebida.strDrinkThumb}} alt="">
-      <ion-card-header>
+      <div class="img">
+        <img src={{bebida.strDrinkThumb}} alt="">
+      </div>
+      <ion-card-header class="title">
         <ion-card-subtitle>{{bebida.strCategory}}</ion-card-subtitle>
         <ion-card-title>{{bebida.strDrink}}</ion-card-title>
       </ion-card-header>
-      <h3>Ingredientes: </h3>
-      <ion-list>
-        <ion-item>
-          <ion-label>{{bebida.strIngredient1}}</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>{{bebida.strIngredient2}}</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>{{bebida.strIngredient3}}</ion-label>
-        </ion-item>
-        
-      </ion-list>
+      <div class="list">
+        <h3>Ingredientes: </h3>
+        <ion-list >
+          <ion-item>
+            <ion-label>{{bebida.strIngredient1}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>{{bebida.strIngredient2}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>{{bebida.strIngredient3}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+      <div class="list">
+        <h3>Tipo do copo:</h3>
+        <ion-list>
+          <ion-item>
+            <ion-label>{{bebida.strGlass}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
     </ion-card>
   </div>
 </ion-content>
+
+<ion-tab-bar slot="bottom" class="tabBar">
+  <ion-tab-button class="btnTab" [routerLink]="['/cardapio']">Menu</ion-tab-button>
+</ion-tab-bar>

@@ -4,7 +4,7 @@ import { CardapioService } from '../service/cardapio.service';
 @Component({
   selector: 'app-pegar-pelo-ingrediente',
   templateUrl: './pegar-pelo-ingrediente.page.html',
-  styleUrls: ['./pegar-pelo-ingrediente.page.scss'],
+  styleUrls: ['./pegar-pelo-ingrediente.page.scss', '../app.component.scss'],
   standalone: false,
 })
 export class PegarPeloIngredientePage implements OnInit {

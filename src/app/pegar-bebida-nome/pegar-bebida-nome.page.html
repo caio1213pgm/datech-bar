@@ -26,10 +26,11 @@
 
   <div *ngIf="chegou === true">
     <div *ngFor="let bebida of bebidas">
-      <ion-card [routerLink]="['/bebida', bebida.idDrink]">
+      <ion-card [routerLink]="['/bebida', bebida.idDrink]" class="card">
         <img [src]="bebida.strDrinkThumb" />
         <ion-card-content>
-          <ion-card-title>{{ bebida.strDrink }}</ion-card-title>
+          <ion-card-title [appMostrarNomeCompleto]="bebida.strDrink">{{bebida.strDrink |
+            encurtarNomesBebidas | uppercase}}</ion-card-title>
         </ion-card-content>
       </ion-card>
     </div>
@@ -42,6 +43,5 @@
 </ion-content>
 
 <ion-tab-bar slot="bottom" class="tabBar">
-  <ion-tab-button class="btnTab" [routerLink]="['/home']">Home</ion-tab-button>
   <ion-tab-button class="btnTab" [routerLink]="['/cardapio']">Menu</ion-tab-button>
 </ion-tab-bar>

@@ -4,7 +4,7 @@ import { CardapioService } from '../service/cardapio.service';
 @Component({
   selector: 'app-pegar-pelo-alcool',
   templateUrl: './pegar-pelo-alcool.page.html',
-  styleUrls: ['./pegar-pelo-alcool.page.scss'],
+  styleUrls: ['./pegar-pelo-alcool.page.scss', '../app.component.scss'],
   standalone: false
 })
 export class PegarPeloAlcoolPage implements OnInit {

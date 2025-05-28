@@ -1,0 +1,36 @@
+.header {
+  color: #f4e6c9;
+  background-color: #561113;
+  text-align: center;
+  padding: 10px;
+  h1 {
+    font-weight: 700;
+  }
+}
+
+.btnTab {
+  font-size: 25px;
+  color: #561113;
+  background-color: #f4e6c9;
+  border: 1.5px solid;
+}
+.tabBar {
+  padding: 10px;
+  background-color: #561113;
+  display: flex;
+  gap: 10px;
+}
+.card{
+  background-color: #561113;
+}
+.divInput {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  ion-button {
+    width: 100%;
+    background-color: #561113;
+    color: #f4e6c9;
+  }
+}

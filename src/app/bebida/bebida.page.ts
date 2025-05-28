@@ -5,7 +5,7 @@ import { CardapioService } from '../service/cardapio.service';
 @Component({
   selector: 'app-bebida',
   templateUrl: './bebida.page.html',
-  styleUrls: ['./bebida.page.scss'],
+  styleUrls: ['./bebida.page.scss', '../app.component.scss'],
   standalone: false,
 })
 export class BebidaPage implements OnInit {

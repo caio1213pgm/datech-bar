@@ -23,23 +23,22 @@ const routes: Routes = [
     path: 'ingrediente',
     loadChildren: () => import('./pegar-pelo-ingrediente/pegar-pelo-ingrediente.module').then( m => m.PegarPeloIngredientePageModule)
   },
-   {
-  path: 'pegar-bebida-nome',
-  loadComponent: () => import('./pegar-bebida-nome/pegar-bebida-nome.page').then(m => m.PegarBebidaNomePage)
-},
   {
-  path: 'pegar-bebida-copo',
-  loadComponent: () => import('./pegar-bebida-copo/pegar-bebida-copo.page').then(m => m.PegarBebidaCopoPage)
-},  {
     path: 'pegar-pelo-alcool',
     loadChildren: () => import('./pegar-pelo-alcool/pegar-pelo-alcool.module').then( m => m.PegarPeloAlcoolPageModule)
   },
   {
     path: 'pegar-pela-categoria',
     loadChildren: () => import('./pegar-pela-categoria/pegar-pela-categoria.module').then( m => m.PegarPelaCategoriaPageModule)
+  },
+  {
+    path: 'pegar-bebida-nome',
+    loadChildren: () => import('./pegar-bebida-nome/pegar-bebida-nome.module').then( m => m.PegarBebidaNomePageModule)
+  },
+  {
+    path: 'pegar-bebida-copo',
+    loadChildren: () => import('./pegar-bebida-copo/pegar-bebida-copo.module').then( m => m.PegarBebidaCopoPageModule)
   }
-
-
 
 ];
 

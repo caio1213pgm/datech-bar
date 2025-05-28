@@ -11,7 +11,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [PegarBebidaNomePageRoutingModule, PegarBebidaNomePage, RouterModule.forChild(routes),],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
 export class PegarBebidaNomePageRoutingModule {}

@@ -4,7 +4,7 @@ import { CardapioService } from '../service/cardapio.service';
 @Component({
   selector: 'app-pegar-pela-categoria',
   templateUrl: './pegar-pela-categoria.page.html',
-  styleUrls: ['./pegar-pela-categoria.page.scss'],
+  styleUrls: ['./pegar-pela-categoria.page.scss', '../app.component.scss'],
   standalone: false
 })
 export class PegarPelaCategoriaPage implements OnInit {
@@ -20,7 +20,7 @@ export class PegarPelaCategoriaPage implements OnInit {
     console.log(this.categoria);
     this.cardapio.getBebidasPorCategoria(this.categoria).subscribe((response) => {
       this.bebidas = response.drinks;
-      if (this.bebidas && this.bebidas.length > 0) {
+      if (this.bebidas !== 'no data found') {
         console.log(this.bebidas);
         this.chegou = true;
       } else {

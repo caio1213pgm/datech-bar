@@ -11,22 +11,22 @@
   color: rgb(255, 255, 255);
   border: 1.5px solid;
 }
-.tabBar{
+.tabBar {
   padding: 10px;
   display: flex;
   gap: 10px;
 }
 
-.divInput{
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    ion-button{
-        width: 100%;
-    }
+.divInput {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  ion-button {
+    width: 100%;
+  }
 }
 
-.error{
-    text-align: center;
+.error {
+  text-align: center;
 }
